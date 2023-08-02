@@ -1,4 +1,20 @@
+import photo1 from "./assets/photo1.png";
+import photo2 from "./assets/photo2.png";
+import photo3 from "./assets/photo3.png";
+import photo4 from "./assets/photo4.png";
+import photo5 from "./assets/photo5.png";
+import photo6 from "./assets/photo6.png";
+
 const App = () => {
+  const crewMembers = [
+    { name: "Bill Mahoney", title: "Product Owner", picture: photo1 },
+    { name: "Saba Cabrera", title: "Art director", picture: photo2 },
+    { name: "Shae Le", title: "Tech Lead", picture: photo3 },
+    { name: "Skylah Lu ", title: "UX Designer", picture: photo4 },
+    { name: "Griff Richards", title: "Developer", picture: photo5 },
+    { name: "Stan John", title: "Developer", picture: photo6 },
+  ];
+
   return (
     <div className="flex flex-col px-60 py-28">
       <div className="flex items-start">
@@ -14,9 +30,23 @@ const App = () => {
       </div>
 
       <main>
+        {/*  
+        
         <div className="grid grid-cols-3 gap-x-16 gap-y-28 [&>*:nth-child(3n+2)]:bg-red-500 [&>*:nth-child(3n+2)]:mt-5">
-          {Array.from({ length: 6 }, (v, i) => i).map((idx) => (
-            <div key={idx} className="bg-purple-500 h-[264px]"></div>
+        */}
+        <div className="grid grid-cols-3 gap-x-16 gap-y-28">
+          {crewMembers.map(({ name, title, picture }, idx) => (
+            <figure
+              key={idx}
+              className="relative flex flex-col space-y-4 bg-purple-500"
+            >
+              <figure className="flex items-start space-x-3">
+                <img src={picture} alt={`${name}'s photo`} />
+                <figcaption className="writing-vertical-lr">{title}</figcaption>
+              </figure>
+
+              <figcaption>{name}</figcaption>
+            </figure>
           ))}
         </div>
       </main>
