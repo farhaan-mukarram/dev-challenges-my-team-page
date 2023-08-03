@@ -17,44 +17,45 @@ const App = () => {
 
   return (
     <div className="mx-auto max-w-7xl">
-      <div className="flex flex-col min-h-screen px-40 py-28 space-y-28">
-        <div className="flex items-start">
+      <div className="flex flex-col min-h-screen px-12 py-16 space-y-16 lg:px-40 lg:py-28 lg:space-y-28">
+        <div className="flex flex-col items-start space-y-9 lg:space-y-0 lg:flex-row">
           <p className="text-4xl font-bold basis-full font-pt-serif">
             The creative crew
           </p>
 
-          <div className="flex flex-col basis-auto">
+          <div className="flex flex-col space-y-3 basis-auto">
             <p className="text-lg font-semibold">WHO WE ARE</p>
-            <p className="text-lg font-normal">
+            <p className="lg:text-lg text-[0.875rem] font-normal">
               We are team of creatively diverse. driven. innovative individuals
               working in various locations from the world.
             </p>
           </div>
         </div>
-
-        <main className="grid grid-cols-3 gap-x-16 gap-y-28 [&>*:nth-child(3n+2)]:mt-24">
+        <main className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-16 lg:gap-x-16 lg:gap-y-28 [&>*:nth-child(even)]:mt-24 [&>*:nth-child(3n+2)]:lg:mt-24">
           {crewMembers.map(({ name, title, picture }, idx) => (
             <figure key={idx} className="flex flex-col space-y-4">
-              <figure className="flex items-start space-x-3">
+              <figure className="flex items-start space-x-2 lg:space-x-3">
                 <img
                   src={picture}
                   alt={`${name}'s photo`}
                   className="max-w-[87%]"
                 />
 
-                <figcaption className="text-xs font-normal uppercase writing-vertical-lr font-pt-serif">
+                <figcaption className="text-[0.625rem] lg:text-xs font-normal uppercase writing-vertical-lr font-pt-serif">
                   {title}
                 </figcaption>
               </figure>
 
-              <figcaption className="text-lg font-semibold">{name}</figcaption>
+              <figcaption className="text-[0.875rem] lg:text-lg font-semibold">
+                {name}
+              </figcaption>
             </figure>
           ))}
         </main>
       </div>
 
-      <footer className="mb-6">
-        <p className="font-medium text-center font-montserrat text-[#BDBDBD]">
+      <footer className="px-12 mb-6 lg:px-40">
+        <p className="font-medium text-center text-[#BDBDBD]">
           created by{" "}
           <span className="font-bold">
             <a
