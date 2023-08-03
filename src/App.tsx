@@ -16,40 +16,67 @@ const App = () => {
   ];
 
   return (
-    <div className="flex flex-col px-60 py-28">
-      <div className="flex items-start">
-        <p className="text-4xl font-bold basis-full">The creative crew</p>
-
-        <div className="flex flex-col basis-auto">
-          <p className="text-lg font-semibold">WHO WE ARE</p>
-          <p className="text-lg font-normal">
-            We are team of creatively diverse. driven. innovative individuals
-            working in various locations from the world.
+    <div className="mx-auto max-w-7xl">
+      <div className="flex flex-col min-h-screen px-40 py-28 space-y-28">
+        <div className="flex items-start">
+          <p className="text-4xl font-bold basis-full font-pt-serif">
+            The creative crew
           </p>
-        </div>
-      </div>
 
-      <main>
-        {/*  
-        
-        <div className="grid grid-cols-3 gap-x-16 gap-y-28 [&>*:nth-child(3n+2)]:bg-red-500 [&>*:nth-child(3n+2)]:mt-5">
-        */}
-        <div className="grid grid-cols-3 gap-x-16 gap-y-28">
+          <div className="flex flex-col basis-auto">
+            <p className="text-lg font-semibold">WHO WE ARE</p>
+            <p className="text-lg font-normal">
+              We are team of creatively diverse. driven. innovative individuals
+              working in various locations from the world.
+            </p>
+          </div>
+        </div>
+
+        <main className="grid grid-cols-3 gap-x-16 gap-y-28 [&>*:nth-child(3n+2)]:mt-24">
           {crewMembers.map(({ name, title, picture }, idx) => (
-            <figure
-              key={idx}
-              className="relative flex flex-col space-y-4 bg-purple-500"
-            >
+            <figure key={idx} className="flex flex-col space-y-4">
               <figure className="flex items-start space-x-3">
-                <img src={picture} alt={`${name}'s photo`} />
-                <figcaption className="writing-vertical-lr">{title}</figcaption>
+                <img
+                  src={picture}
+                  alt={`${name}'s photo`}
+                  className="max-w-[87%]"
+                />
+
+                <figcaption className="text-xs font-normal uppercase writing-vertical-lr font-pt-serif">
+                  {title}
+                </figcaption>
               </figure>
 
-              <figcaption>{name}</figcaption>
+              <figcaption className="text-lg font-semibold">{name}</figcaption>
             </figure>
           ))}
-        </div>
-      </main>
+        </main>
+      </div>
+
+      <footer className="mb-6">
+        <p className="font-medium text-center font-montserrat text-[#BDBDBD]">
+          created by{" "}
+          <span className="font-bold">
+            <a
+              href="https://github.com/farhaan-mukarram/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              farhaan-mukarram
+            </a>
+          </span>
+          {" - "}
+          <a
+            href="https://devchallenges.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline"
+          >
+            devChallenges.io
+          </a>
+        </p>
+      </footer>
     </div>
   );
 };

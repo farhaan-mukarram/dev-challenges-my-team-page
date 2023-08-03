@@ -7,3 +7,9 @@
     writing-mode: vertical-lr;
   }
 }
+
+@layer base {
+  html {
+    font-family: "Poppins", sans-serif;
+  }
+}
