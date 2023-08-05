@@ -31,7 +31,7 @@ const App = () => {
             </p>
           </div>
         </div>
-        <main className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-16 md:gap-x-10 md:gap-y-20 lg:gap-x-16 lg:gap-y-28 [&>*:nth-child(even)]:mt-24 [&>*:nth-child(3n+2)]:lg:mt-24">
+        <main className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-16 md:gap-x-10 md:gap-y-20 lg:gap-x-16 lg:gap-y-28 [&>*:nth-child(2n)]:relative [&>*:nth-child(2n)]:lg:static [&>*:nth-child(2n)]:top-24 [&>*:nth-child(3n+2)]:lg:relative [&>*:nth-child(3n+2)]:lg:top-24">
           {crewMembers.map(({ name, title, picture }, idx) => (
             <figure key={idx} className="flex flex-col space-y-4">
               <figure className="flex items-start space-x-2 lg:space-x-3">
@@ -54,7 +54,7 @@ const App = () => {
         </main>
       </div>
 
-      <footer className="px-5 mb-6 lg:px-40">
+      <footer className="px-5 mt-24 mb-6 lg:px-40">
         <p className="font-medium text-center text-[#BDBDBD]">
           created by{" "}
           <span className="font-bold">
